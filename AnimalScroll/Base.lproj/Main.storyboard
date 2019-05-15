@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,45 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AnimalScroll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsf-IR-jUu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="carlino" translatesAutoresizingMaskIntoConstraints="NO" id="Jy5-nl-3A0">
+                                        <rect key="frame" x="0.0" y="-9" width="707" height="905"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="905" id="T1d-hh-PNH"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Jy5-nl-3A0" firstAttribute="leading" secondItem="fsf-IR-jUu" secondAttribute="leadingMargin" constant="-8" id="599-Lh-3oi"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jy5-nl-3A0" secondAttribute="bottom" id="bFc-91-GW8"/>
+                                    <constraint firstItem="Jy5-nl-3A0" firstAttribute="top" secondItem="fsf-IR-jUu" secondAttribute="top" constant="-9" id="o1K-o2-Gz7"/>
+                                    <constraint firstItem="Jy5-nl-3A0" firstAttribute="trailing" secondItem="fsf-IR-jUu" secondAttribute="trailingMargin" constant="301" id="rA3-8E-KL8"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fsf-IR-jUu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LhW-ak-vCg"/>
+                            <constraint firstAttribute="bottom" secondItem="fsf-IR-jUu" secondAttribute="bottom" id="Zme-qG-jst"/>
+                            <constraint firstItem="fsf-IR-jUu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="epO-8h-UpN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fsf-IR-jUu" secondAttribute="trailing" id="tOX-Dl-rsg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="carlino" width="992" height="558"/>
+    </resources>
 </document>

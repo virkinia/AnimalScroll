@@ -27,12 +27,33 @@ class ViewController: UIViewController {
     }
 
 
+// Cuando cambiamos de orientación el móvil
+    override func viewWillLayoutSubviews() {
+
+        //llamo al padre
+        super.viewWillLayoutSubviews()
+
+        // View es la View que tenemos asociada en este caso se llama así, podría tener otro nombre
+    updateMinZoomScaleForSize(view.bounds.size)
+
+    }
+
+
 
 
 
 }
+
+//MARK: Controlar Scroll
 extension ViewController: UIScrollViewDelegate {
 
+    func updateMinZoomScaleForSize(_ size: CGSize) {
+        let withScale = size.width / imagen.bounds.width
+        let heightScale = size.height/imagen.bounds.height
+        let minScale = min(withScale, heightScale)
+
+        scrollImage.minimumZoomScale = minScale
+    }
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imagen
@@ -41,6 +62,8 @@ extension ViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         debugPrint("Scroll")
     }
+
+
 
 }
 

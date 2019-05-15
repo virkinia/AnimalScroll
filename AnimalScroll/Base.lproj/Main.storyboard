@@ -21,30 +21,41 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsf-IR-jUu">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="carlino" translatesAutoresizingMaskIntoConstraints="NO" id="Jy5-nl-3A0">
-                                        <rect key="frame" x="0.0" y="-9" width="707" height="905"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carlino" translatesAutoresizingMaskIntoConstraints="NO" id="Jy5-nl-3A0">
+                                        <rect key="frame" x="0.0" y="-128" width="992" height="1500"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="905" id="T1d-hh-PNH"/>
+                                            <constraint firstAttribute="height" constant="1500" id="T1d-hh-PNH"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Jy5-nl-3A0" firstAttribute="leading" secondItem="fsf-IR-jUu" secondAttribute="leadingMargin" constant="-8" id="599-Lh-3oi"/>
                                     <constraint firstAttribute="bottom" secondItem="Jy5-nl-3A0" secondAttribute="bottom" id="bFc-91-GW8"/>
-                                    <constraint firstItem="Jy5-nl-3A0" firstAttribute="top" secondItem="fsf-IR-jUu" secondAttribute="top" constant="-9" id="o1K-o2-Gz7"/>
+                                    <constraint firstItem="Jy5-nl-3A0" firstAttribute="top" secondItem="fsf-IR-jUu" secondAttribute="top" constant="-128" id="o1K-o2-Gz7"/>
                                     <constraint firstItem="Jy5-nl-3A0" firstAttribute="trailing" secondItem="fsf-IR-jUu" secondAttribute="trailingMargin" constant="301" id="rA3-8E-KL8"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5k9-8B-ZPV"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fsf-IR-jUu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LhW-ak-vCg"/>
+                            <constraint firstItem="fsf-IR-jUu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LhW-ak-vCg"/>
                             <constraint firstAttribute="bottom" secondItem="fsf-IR-jUu" secondAttribute="bottom" id="Zme-qG-jst"/>
                             <constraint firstItem="fsf-IR-jUu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="epO-8h-UpN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fsf-IR-jUu" secondAttribute="trailing" id="tOX-Dl-rsg"/>
+                            <constraint firstAttribute="trailing" secondItem="fsf-IR-jUu" secondAttribute="trailing" id="tOX-Dl-rsg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomCons" destination="bFc-91-GW8" id="fER-TA-umL"/>
+                        <outlet property="imagen" destination="Jy5-nl-3A0" id="HJz-th-1PZ"/>
+                        <outlet property="leadingCons" destination="599-Lh-3oi" id="uAI-XL-5U5"/>
+                        <outlet property="scrollImage" destination="fsf-IR-jUu" id="SGe-jf-eoQ"/>
+                        <outlet property="topCons" destination="o1K-o2-Gz7" id="ksd-IM-Gxz"/>
+                        <outlet property="trailingCons" destination="rA3-8E-KL8" id="MUJ-Tv-09i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var razaName: String?
+
     @IBOutlet weak var imagen: UIImageView!
     @IBOutlet weak var scrollImage: UIScrollView!
 
@@ -24,6 +26,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
+        //Cargar la imagen desde los assets
+        imagen.image = UIImage(named: razaName ?? "carlino")
+
+
     }
 
 

@@ -16,9 +16,19 @@ class GatitosUIPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.dataSource = self
+        self.dataSource = self
 
-        //self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+        let firstRaza = razasDeGatitos[pageIndex]
+
+        if let firstViewController = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerID") as? ViewController {
+
+            firstViewController.razaName = firstRaza
+            self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+
+        }
+
+
+
 
         // Do any additional setup after loading the view.
     }
@@ -35,7 +45,7 @@ class GatitosUIPageViewController: UIPageViewController {
     */
 
 }
-/*
+
  extension GatitosUIPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         return nil
@@ -46,4 +56,4 @@ class GatitosUIPageViewController: UIPageViewController {
     }
     
 
-}*/
+}

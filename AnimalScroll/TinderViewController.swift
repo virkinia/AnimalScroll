@@ -12,6 +12,7 @@ class TinderViewController: UIViewController {
 
     @IBOutlet weak var pagePictures: UIPageControl!
 
+    @IBOutlet weak var scrollAnimals: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +23,20 @@ class TinderViewController: UIViewController {
     }
     
 
+    @IBAction func pagePicturesChanges(_ sender: UIPageControl) {
+
+        debugPrint("Page ha cambiado a \(sender.currentPage)")
+
+
+        let scrollWidth = scrollAnimals.bounds.width
+        var contentOffset = scrollAnimals.contentOffset
+        let offSetX = CGFloat(sender.currentPage) * scrollWidth
+        
+        contentOffset.x = offSetX
+       scrollAnimals.contentOffset.x = offSetX
+        scrollAnimals.setContentOffset(contentOffset, animated: true)
+
+    }
     /*
     // MARK: - Navigation
 
@@ -36,6 +51,12 @@ class TinderViewController: UIViewController {
 extension TinderViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         debugPrint("El offset es \(scrollView.contentOffset)")
-        pagePictures.currentPage = Int((scrollView.contentOffset.x + 150 ) / 300 )
+        //
+        //pagePictures.currentPage = Int((scrollView.contentOffset.x + 150 ) / 300 )
+
+        let scrollWidth = scrollView.bounds.width
+        let currentPage = Int( (scrollView.contentOffset.x + (scrollWidth * 0.5)) / scrollWidth)
+
+        pagePictures.currentPage = currentPage
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BcJ-01-23K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wpU-kY-bJ9">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -61,6 +61,69 @@
             </objects>
             <point key="canvasLocation" x="-826" y="70"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="y4V-Wg-M4x">
+            <objects>
+                <viewController id="wpU-kY-bJ9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VFC-gm-gqz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="00W-FV-nhZ">
+                                <rect key="frame" x="56" y="103" width="302" height="250"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WMb-3T-Crx">
+                                        <rect key="frame" x="0.0" y="0.0" width="900" height="250"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carlino" translatesAutoresizingMaskIntoConstraints="NO" id="KUY-d1-uUC">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="NvA-8N-4Wa"/>
+                                                    <constraint firstAttribute="width" constant="300" id="cHN-As-mUF"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comun" translatesAutoresizingMaskIntoConstraints="NO" id="U9E-Ab-I0y">
+                                                <rect key="frame" x="300" y="0.0" width="300" height="250"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="siames" translatesAutoresizingMaskIntoConstraints="NO" id="5Mx-F9-s9B">
+                                                <rect key="frame" x="600" y="0.0" width="300" height="250"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="900" id="EEz-gy-eIQ"/>
+                                            <constraint firstItem="U9E-Ab-I0y" firstAttribute="width" secondItem="KUY-d1-uUC" secondAttribute="width" id="Htd-jl-fON"/>
+                                            <constraint firstItem="U9E-Ab-I0y" firstAttribute="height" secondItem="KUY-d1-uUC" secondAttribute="height" id="bYq-Jl-Fh2"/>
+                                            <constraint firstItem="5Mx-F9-s9B" firstAttribute="width" secondItem="KUY-d1-uUC" secondAttribute="width" id="fhs-c0-kFF"/>
+                                            <constraint firstItem="5Mx-F9-s9B" firstAttribute="height" secondItem="KUY-d1-uUC" secondAttribute="height" id="ltS-tF-NzH"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WMb-3T-Crx" firstAttribute="top" secondItem="00W-FV-nhZ" secondAttribute="top" id="POL-3P-GPt"/>
+                                    <constraint firstAttribute="bottom" secondItem="WMb-3T-Crx" secondAttribute="bottom" id="fYw-E2-BTx"/>
+                                    <constraint firstItem="WMb-3T-Crx" firstAttribute="leading" secondItem="00W-FV-nhZ" secondAttribute="leading" id="sIa-mv-GrI"/>
+                                    <constraint firstAttribute="trailing" secondItem="WMb-3T-Crx" secondAttribute="trailing" id="tKd-SV-v7y"/>
+                                    <constraint firstItem="WMb-3T-Crx" firstAttribute="centerY" secondItem="00W-FV-nhZ" secondAttribute="centerY" id="wn8-29-gqo"/>
+                                </constraints>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="56N-le-8H3">
+                                <rect key="frame" x="187.5" y="388" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="00W-FV-nhZ" firstAttribute="leading" secondItem="Dfz-JT-FAk" secondAttribute="leading" constant="56" id="7V9-M1-wLj"/>
+                            <constraint firstItem="56N-le-8H3" firstAttribute="top" secondItem="00W-FV-nhZ" secondAttribute="bottom" constant="35" id="9Nn-px-5JL"/>
+                            <constraint firstItem="00W-FV-nhZ" firstAttribute="centerX" secondItem="VFC-gm-gqz" secondAttribute="centerX" id="pMg-KP-754"/>
+                            <constraint firstItem="00W-FV-nhZ" firstAttribute="top" secondItem="Dfz-JT-FAk" secondAttribute="top" constant="59" id="vyB-NJ-F7x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dfz-JT-FAk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9AP-8l-ZSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55.072463768115945" y="67.633928571428569"/>
+        </scene>
         <!--GatitosUI Page View Controller-->
         <scene sceneID="2Kw-rY-DAd">
             <objects>
@@ -72,5 +135,7 @@
     </scenes>
     <resources>
         <image name="carlino" width="992" height="558"/>
+        <image name="comun" width="275" height="183"/>
+        <image name="siames" width="285" height="177"/>
     </resources>
 </document>

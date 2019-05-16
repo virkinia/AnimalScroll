@@ -18,41 +18,55 @@ class GatitosUIPageViewController: UIPageViewController {
 
         self.dataSource = self
 
+
+
+        if let firstViewController = createRazaViewController() {
+             self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+        }
+
+
+        // Do any additional setup after loading the view.
+    }
+
+    func createRazaViewController() -> ViewController? {
+        if !(0 ..< razasDeGatitos.count).contains(pageIndex) {
+            return nil
+        }
         let firstRaza = razasDeGatitos[pageIndex]
 
         if let firstViewController = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerID") as? ViewController {
 
             firstViewController.razaName = firstRaza
-            self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
-
+            return firstViewController
+        } else {
+            return nil
         }
 
-
-
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
  extension GatitosUIPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return nil
+
+        if (pageIndex == 0) {
+                return nil
+        }
+
+        pageIndex -= 1
+        return createRazaViewController()
+
+
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return nil
+
+        if (pageIndex == razasDeGatitos.count - 1) {
+            return nil
+        }
+
+        pageIndex += 1
+        return createRazaViewController()
     }
     
 

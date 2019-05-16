@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="-826" y="70"/>
         </scene>
-        <!--View Controller-->
+        <!--Tinder View Controller-->
         <scene sceneID="y4V-Wg-M4x">
             <objects>
-                <viewController id="wpU-kY-bJ9" sceneMemberID="viewController">
+                <viewController id="wpU-kY-bJ9" customClass="TinderViewController" customModule="AnimalScroll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VFC-gm-gqz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,20 +105,30 @@
                                     <constraint firstAttribute="trailing" secondItem="WMb-3T-Crx" secondAttribute="trailing" id="tKd-SV-v7y"/>
                                     <constraint firstItem="WMb-3T-Crx" firstAttribute="centerY" secondItem="00W-FV-nhZ" secondAttribute="centerY" id="wn8-29-gqo"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="wpU-kY-bJ9" id="6zU-Vf-p3t"/>
+                                </connections>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="56N-le-8H3">
-                                <rect key="frame" x="187.5" y="388" width="39" height="37"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="56N-le-8H3">
+                                <rect key="frame" x="175" y="388" width="64" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.74333723129999996" blue="0.97321642149999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="00W-FV-nhZ" firstAttribute="leading" secondItem="Dfz-JT-FAk" secondAttribute="leading" constant="56" id="7V9-M1-wLj"/>
                             <constraint firstItem="56N-le-8H3" firstAttribute="top" secondItem="00W-FV-nhZ" secondAttribute="bottom" constant="35" id="9Nn-px-5JL"/>
+                            <constraint firstItem="56N-le-8H3" firstAttribute="centerX" secondItem="00W-FV-nhZ" secondAttribute="centerX" id="fy5-96-NJi"/>
                             <constraint firstItem="00W-FV-nhZ" firstAttribute="centerX" secondItem="VFC-gm-gqz" secondAttribute="centerX" id="pMg-KP-754"/>
+                            <constraint firstItem="56N-le-8H3" firstAttribute="leading" secondItem="Dfz-JT-FAk" secondAttribute="leading" constant="175" id="rS3-Ft-MSV"/>
                             <constraint firstItem="00W-FV-nhZ" firstAttribute="top" secondItem="Dfz-JT-FAk" secondAttribute="top" constant="59" id="vyB-NJ-F7x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dfz-JT-FAk"/>
                     </view>
+                    <connections>
+                        <outlet property="pagePictures" destination="56N-le-8H3" id="i6w-Bb-VBC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9AP-8l-ZSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

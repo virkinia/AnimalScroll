@@ -35,13 +35,9 @@ class ViewController: UIViewController {
 
         // View es la View que tenemos asociada en este caso se llama así, podría tener otro nombre
     updateMinZoomScaleForSize(view.bounds.size)
+    updateConstraintsForSize(view.bounds.size)
 
     }
-
-
-
-
-
 }
 
 //MARK: Controlar Scroll
@@ -61,6 +57,21 @@ extension ViewController: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         debugPrint("Scroll")
+
+        updateConstraintsForSize(scrollImage.bounds.size)
+
+    }
+
+    func updateConstraintsForSize (_ size: CGSize){
+        let xOffset = max (0, (size.width - imagen.frame.width)/2)
+        leadingCons.constant = xOffset
+        trailingCons.constant = xOffset
+
+        let yOffset = max (0, (size.height - imagen.frame.height)/2)
+        topCons.constant = yOffset
+        bottomCons.constant = yOffset
+
+        view.layoutIfNeeded()
     }
 
 

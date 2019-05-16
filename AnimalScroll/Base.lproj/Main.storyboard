@@ -59,7 +59,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-813" y="70"/>
+            <point key="canvasLocation" x="-826" y="70"/>
+        </scene>
+        <!--GatitosUI Page View Controller-->
+        <scene sceneID="2Kw-rY-DAd">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="BcJ-01-23K" customClass="GatitosUIPageViewController" customModule="AnimalScroll" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ax0-Ai-JLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1597" y="70"/>
         </scene>
     </scenes>
     <resources>

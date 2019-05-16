@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var razaName: String?
+    var indexRaza = 0 // la utiliza para preguntar a la vista qué index tiene y que así no se dupliquen
 
     @IBOutlet weak var imagen: UIImageView!
     @IBOutlet weak var scrollImage: UIScrollView!

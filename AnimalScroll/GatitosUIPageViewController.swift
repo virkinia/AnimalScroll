@@ -17,6 +17,8 @@ class GatitosUIPageViewController: UIPageViewController {
         super.viewDidLoad()
 
         self.dataSource = self
+        self.delegate = self
+
 
 
 
@@ -37,11 +39,18 @@ class GatitosUIPageViewController: UIPageViewController {
         if let firstViewController = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerID") as? ViewController {
 
             firstViewController.razaName = firstRaza
+            firstViewController.indexRaza = pageIndex
             return firstViewController
         } else {
             return nil
         }
 
+    }
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return razasDeGatitos.count
+    }
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return pageIndex
     }
 
 }
@@ -49,11 +58,16 @@ class GatitosUIPageViewController: UIPageViewController {
  extension GatitosUIPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 
+        guard let currentViewController = viewController as? ViewController,
+            currentViewController.indexRaza > 0 else  {
+                return nil
+        }
+
         if (pageIndex == 0) {
                 return nil
         }
 
-        pageIndex -= 1
+         pageIndex = currentViewController.indexRaza - 1
         return createRazaViewController()
 
 
@@ -61,13 +75,21 @@ class GatitosUIPageViewController: UIPageViewController {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
 
-        if (pageIndex == razasDeGatitos.count - 1) {
-            return nil
+        guard let currentViewController = viewController as? ViewController,
+            currentViewController.indexRaza < razasDeGatitos.count else  {
+                return nil
         }
 
-        pageIndex += 1
+        pageIndex = currentViewController.indexRaza + 1
         return createRazaViewController()
     }
     
+
+}
+extension GatitosUIPageViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+
+        debugPrint("He terminado de cambiarme")
+    }
 
 }
